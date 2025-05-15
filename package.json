@@ -11,10 +11,23 @@
     "#*": "./*.js"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "supertest": "^7.1.0",
     "vitest": "^3.1.1"
-  }
+  },
+  "version": "1.0.0",
+  "description": "The organization is pleased with your work in creating the proof-of-concept employee-management API. Take your work to the next level by adding middleware and organizing your endpoints into routers!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaysal95/Employee-Directory-V2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kaysal95/Employee-Directory-V2/issues"
+  },
+  "homepage": "https://github.com/Kaysal95/Employee-Directory-V2#readme"
 }

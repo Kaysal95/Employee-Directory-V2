@@ -1,16 +1,18 @@
 import express from "express";
+import router from "#api/post";
 const app = express();
 export default app;
 
 import employees from "#db/employees";
 
+//BODY PARSING MIDDLEWARE
+app.use(express.json());
+
 app.route("/").get((req, res) => {
   res.send("Hello employees!");
 });
 
-app.route("/employees").get((req, res) => {
-  res.send(employees);
-});
+app.use("/employees", router)
 
 // Note: this middleware has to come first! Otherwise, Express will treat
 // "random" as the argument to the `id` parameter of /employees/:id.
@@ -32,3 +34,11 @@ app.route("/employees/:id").get((req, res) => {
 
   res.send(employee);
 });
+
+
+
+//CATCH ALL ERROR HANDLING MIDDLEWARE
+app.use((err, req, res, next) => {
+  console.log(err)
+  res.status(500).send("AN ERROR OCCURED" + err)
+})
